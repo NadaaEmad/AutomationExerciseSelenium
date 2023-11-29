@@ -18,12 +18,10 @@ public class RegisterUserTest {
     }
 
     @Test
-    public void homePageIsVisible(){
-        driver.findElement(By.xpath("(//h1)[1]"));
-    }
-
-    @Test
     public void verifySignUp(){
+        //Verify home page is visible
+        driver.findElement(By.xpath("(//h1)[1]"));
+
         //Verify New User SignUp!
         driver.findElement(By.xpath("(//li)[4]")).click(); //click on signup/login
         String signupText = driver.findElement(By.xpath("(//h2)[3]")).getText();
