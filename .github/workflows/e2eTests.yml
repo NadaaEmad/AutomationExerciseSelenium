@@ -28,6 +28,7 @@ jobs:
       run: mvn test -DbrowserType="chrome" -DheadlessExecution="false" -DmaximizeWindow="true" -Dtest="automationexercise.tests.AutomationExerciseTests"
 
     - name: Publish report
+      continue-on-error: true
       uses: dorny/test-reporter@v1
       if: success() || failure()    # run this step even if previous step failed
       with:
