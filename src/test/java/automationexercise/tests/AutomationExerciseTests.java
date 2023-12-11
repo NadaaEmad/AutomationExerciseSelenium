@@ -4,6 +4,10 @@ import automationexercise.pages.*;
 import framework.engine.DriverFactory;
 import framework.engine.JsonFileManager;
 import framework.engine.PropertiesReader;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +25,7 @@ public class AutomationExerciseTests{
     JsonFileManager testData;
 
     /////Test Cases/////
-    @Test
+    @Test(description = "Verify sign up")
     public void verifySignUp(){
         homePage.verifyHomePageHeader();
         signUpLoginPage.navigateSignUpLogin();

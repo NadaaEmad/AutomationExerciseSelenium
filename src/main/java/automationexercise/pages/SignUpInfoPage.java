@@ -1,5 +1,6 @@
 package automationexercise.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -35,6 +36,7 @@ public class SignUpInfoPage {
 
     // Actions
 
+    @Step("fill User Info")
     public void fillUserInfo(String password, String days, String months, String years){
         driver.findElement(gender).click();
         driver.findElement(this.password).sendKeys(password);
@@ -44,6 +46,7 @@ public class SignUpInfoPage {
         driver.findElement(this.newsletter).click();
         driver.findElement(this.option).click();
     }
+    @Step("fill Address Info")
     public void fillAddressInfo(String firstName,String lastName,String company,String address1,String address2,
                                 String country,String state,String city,String zipcode,String mobile_number){
         driver.findElement(this.firstName).sendKeys(firstName);
@@ -58,11 +61,13 @@ public class SignUpInfoPage {
         driver.findElement(this.mobile_number).sendKeys(mobile_number);
 
     }
+    @Step("click Create Account")
     public void clickCreateAccount(){
         driver.findElement(createAccountButton).click();
     }
 
     // Validations
+    @Step("assert Enter Account Info")
     public void assertEnterAccountInfo(String expectedResult){
         Assert.assertEquals(driver.findElement(accountInfo).getText(), expectedResult);
     }
